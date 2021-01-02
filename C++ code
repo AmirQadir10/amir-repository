@@ -7,40 +7,44 @@ int main(){
 	cout<<"Enter the Number \n";
 	for(i=0;i<10;i++){
 		cout<<i<<"=>";
-		cin>>numlist[i];	
+		cin>>numlist[i];
+		
 		if(numlist[i]>0){
 			sum=numlist[i];
 			sum=count;
 			count++;
 		}
-		else if(numlist<0){
+		else if(numlist[i]<0){
 			sub=numlist[i];
 			sub=count2;
 			count2++;
 		}
-		else if(numlist==0){
+		else if(numlist[i]==0){
 			ze=numlist[i];
 			ze=count3;
 			count3++;
 		}
-		else if(numlist[i]%2==0){
+		else if(numlist[i]%2==0){  // IT NOT WORKING WELL????????
 			ev=numlist[i];
 			ev=count4;
 			count4++;
 			
 		}
-		else {
+		else if(numlist[i]%2==1){    // IT NOT WORKING WELL????????
 			od=numlist[i];
 			od=count5;
 			count5++;
 		}
+		
+	
+		
 	}
 	//Output
 
 	cout<<"================="<<endl;
-	cout<<"Number of Positive "<<sum<<endl;
-	cout<<"Number of Negative "<<sub<<endl;
-	cout<<"Number of Even "<<ev<<endl;
-	cout<<"Number of Odd "<<od<<endl;
-	cout<<"Number of 0 "<<ze<<endl;
+	cout<<"Number of Positive =>"<<sum<<endl;
+	cout<<"Number of Negative =>"<<sub<<endl;
+	cout<<"Number of Even =>"<<ev<<endl;
+	cout<<"Number of Odd =>"<<od<<endl;
+	cout<<"Number of 0 =>"<<ze<<endl;
 }
