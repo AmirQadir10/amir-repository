@@ -24,13 +24,16 @@ int main(){
 			ze=count3;
 			count3++;
 		}
-		else if(numlist[i]%2==0){  // IT NOT WORKING WELL????????
+		
+		//////////////////////////IT WORK LIKE THAT saparatly
+		
+		 if(numlist[i]%2==0){ 
 			ev=numlist[i];
 			ev=count4;
 			count4++;
 			
 		}
-		else if(numlist[i]%2==1){    // IT NOT WORKING WELL????????
+		else if(numlist[i]%2==1){    
 			od=numlist[i];
 			od=count5;
 			count5++;
