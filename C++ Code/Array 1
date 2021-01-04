@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+/*
 int main(){
 	int numlist[10];
 	int i,sum=0,sub=0,ev=0,od=0,ze=0;
@@ -51,3 +52,132 @@ int main(){
 	cout<<"Number of Odd =>"<<od<<endl;
 	cout<<"Number of 0 =>"<<ze<<endl;
 }
+
+*/
+
+
+//////////////======>Second one
+/*
+int main()
+{
+    int a[10], b[10];
+    for(int i=0;i<10;i++)
+    {
+        cout << "Enter a number\n";
+        cin >> a[i];
+    }
+    int j = 0;
+    for(int i=9;i>=0;i--)   //\\\\\\\\\\\\\\\ Clear the Concept first;
+    {
+        b[i] = a[j];
+        j++;
+    }
+    for(int i=0;i<10;i++)
+    {
+        cout << b[i] << "\n";
+    }
+    return 0;
+} */
+
+//\\\\\\\\\\\\\\\\Third one
+/*
+int main(){
+int arr[5]={12,100000,2,43,60};
+int largest=arr[0];
+int small=arr[0];
+int i;
+for(i=0;i<5;i++){
+cout<<arr[i]<<" "<<endl;
+}
+cout<<"=======================\n";
+for(i=0;i<5;i++){
+
+if(largest<arr[i]){       
+	largest=arr[i];      
+}                        
+else if(small>arr[i]){  
+	small=arr[i];        
+}                        
+}                        
+cout<<"Largest Number in arr "<<largest<<endl;  
+cout<<"small Number in arr "<<small<<endl;	   
+	
+}
+  */
+
+  //          ( DRY RUN )
+  //Find the largest and smallest elements of an array?
+  // arr[5]={12,100000,2,43,60} ?
+   
+   
+   // for(int i=0;i<5;i++){ 
+// => i=index 0=12
+//  if(12<12) not store in large                  
+// else if(12>12)not store in small
+                    
+// => i= increment index 1 = 100000
+// if(12<100000) ture store in large
+// else if(12>10000) false not store in small
+      
+// => i=increment index 2 = 2
+// if(100000<2) false not store in large
+// else if(12>2) ture store in small 
+
+// => i=increment index 3= 43
+// if(100000<43) false not store in large
+// else if(2>43) false not store in small
+
+// => i=increment index 4=60
+// if(100000<60)false not store in large
+// else if(2>60)false not store in small
+
+//  } 
+//\\\\\\\\\\\\\\Fourth one
+/*
+int main()
+{
+    int arr[5]={12,23,34,45,56};
+    for(int i=0;i<5;i++){
+    	cout<<arr[i]<<" ";
+    	
+	}
+	cout<<"\n===============\n";
+    cout<<arr[4]<<" ";
+	    for(int i=0;i<4;i++){
+    	cout<<arr[i]<<" ";
+	}	
+    
+}
+*/
+//\\\ ///////////////////////////// Fifth one
+int main(){
+int arr[10]={12,32,42,52,52,24,1200,345,100,432};	
+int i;
+int la=arr[0];
+int la2=arr[0];
+int la3=arr[0];
+for(i=0;i<10;i++){
+	cout<<arr[i]<<" ";
+}
+cout<<"\n================\n";
+for(i=0;i<10;i++){
+
+if (arr[i] > la)
+        {
+            la3 = la2;
+            la2 = la;
+            la = arr[i];
+        }
+         else if (arr[i] > la2)
+        {
+            la3 = la2;
+            la2 = arr[i];
+        }
+  
+        else if (arr[i] > la3){
+		
+            la3 = arr[i];
+    }
+}
+cout<<"This is larger Number in this arr "<<la<<" "<<la2<<" "<<la3;			
+}	
