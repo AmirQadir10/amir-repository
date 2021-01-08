@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+	
+	int i,j,m;
+	int size,size2;
+    int sub,rn, marks;
+
+	// This is for add total roll number in array
+	cout<<"Enter the total number of roll number ";
+	cin>>rn;
+	
+string studentroll[rn];
+	//this is to add total sub in array
+	 cout<<"Enter the total Number of Subject ";
+	 cin>>sub;
+	
+string subject[sub];
+	cout<<"\n===================================\n";
+	
+	// This is to add roll || subjest name in array; 
+	cout<<"\nEnter the Roll Number here Ex=>(rollnumber1)"<<endl;
+	for(i=0;i<rn;i++){
+   cin>>studentroll[i];
+	}
+	cout<<"Enter the Subject Name here"<<endl;
+	for(j=0;j<sub;j++){
+cin>>subject[j];
+	}
+	
+	
+	int mark[rn*sub];	
+	// this is to add or store marks in array;
+	cout<<"Now Add marks in array"<<endl;
+	for(m=0;m<rn*sub;m++){
+	cin>>mark[m];
+	}
+	
+	//=============================================
+	for(i=0;i<rn;i++){
+		for(j=0;j<sub;j++){
+			for(m=0;m<rn*sub;m++){
+cout<<studentroll[i]<<" "<<subject[j]<<" "<<subject[j]<<" "<<subject[j]<<endl;
+cout<<              " "<<mark[m]  <<"  "<<mark[m]  <<" "<<mark[m]<<endl;    
+			}
+		}
+	}
+                      
+		
+	
+}
