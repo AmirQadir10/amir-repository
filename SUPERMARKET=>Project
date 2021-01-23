@@ -1,0 +1,608 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+//        GLOBLE VARIABLE
+
+               // FOR STORE ITEMS "PRICE", "PRODUCT QUANITY", "PRODUCT NUMBER" OR NAME
+               
+      //=====================================
+	string arr[6]={"Cocacola","Lays","Sprite","Bread","Egg","Milk"};//PRODUCT NAME;
+    int arr2[6]={50,10,50,40,15,120};//PRICE 
+    int quan[6]={50,50,50,50,100,50};// PRODUCT QUANITY
+    int prod[6]={150,210,350,440,515,6120};// PRODUCT NO
+    //==================================================
+                    // for gannarate bill
+                    
+    //==================================
+    int totalsum;         
+    int a;
+    int quantity1,quantity2,quantity3,quantity4,quantity5,quantity6;
+    int total1,total2,total3,total4,total5,total6;
+    //========================================
+                //  FILE HANDLING                      
+                
+    //====================================
+         string productname[6];	//this is file handling array 
+int products[3][6]; // this file handling array    
+    //===============================================
+    
+
+
+//=============================================userchoice function=====================
+void userchoice(){
+	
+ 	
+cout<<"Enter Number which u want to buy\n";
+cin>>a;	
+switch (a){
+case 1: cout<<arr[0]<<" "<<arr2[0]<<"Rs";
+cout<<endl;
+cout<<"\n==================================\n";
+cout<<"How much Quantity u want"<<endl;
+	cin>>quantity1;
+if(quantity1<quan[0])
+{
+	    
+         total1=arr2[0]*quantity1; 
+		 totalsum=total1;    
+		cout<<"Total Price-> "<<total1;	
+}
+   else{
+   	cout<<endl;
+   	cout<<"OUT OF STOCK";
+   }     
+
+		
+break;
+case 2:	cout<<arr[1]<<" "<<arr2[1]<<"Rs";
+cout<<endl;
+cout<<"\n==================================\n";
+  cout<<"\nHow much Quantity u Want"<<endl;
+		cin>>quantity2;
+if(quantity2<quan[1])
+{
+	    
+         total2=arr2[1]*quantity2;     
+         totalsum=total2;
+		cout<<"Total Price-> "<<total2;	
+}
+   else{
+   	cout<<endl;
+   	cout<<"OUT OF STOCK";
+   }     
+	           
+         
+	
+break;	
+case 3:cout<<arr[2]<<" "<<arr2[2]<<"Rs";
+cout<<endl;
+cout<<"\n==================================\n";
+cout<<"\nHow much Quantity u Want"<<endl;
+		cin>>quantity3;
+if(quantity3<quan[2])
+{
+	    
+         total3=arr2[2]*quantity3;     
+         totalsum=total3;
+		cout<<"Total Price-> "<<total3;	
+}
+   else{
+   	cout<<endl;
+   	cout<<"OUT OF STOCK";
+   }     
+	
+break;
+case 4: cout<<arr[3]<<" "<<arr2[3]<<"Rs";
+cout<<endl;
+cout<<"\n==================================\n";
+cout<<"\nHow much Quantity u Want"<<endl;
+		cin>>quantity4;
+	if(quantity4<quan[3])
+{
+	    
+         total4=arr2[3]*quantity4;     
+         totalsum=total4;
+		cout<<"Total Price-> "<<total4;	
+}
+   else{
+   	cout<<endl;
+   	cout<<"OUT OF STOCK";
+   }     
+
+break;
+case 5:cout<<arr[4]<<" "<<arr2[4]<<"Rs";
+cout<<endl;
+cout<<"\n==================================\n";
+cout<<"\nHow much Quantity u Want"<<endl;
+		cin>>quantity5;
+	if(quantity5<quan[4])
+{
+	    
+         total5=arr2[4]*quantity5;     
+         totalsum=total5;
+		cout<<"Total Price-> "<<total5;	
+}
+   else{
+   	cout<<endl;
+   	cout<<"OUT OF STOCK";
+   }     
+           
+       
+	
+break;
+case 6:cout<<arr[5]<<" "<<arr2[5]<<"Rs";
+cout<<endl;
+cout<<"\n==================================\n";
+cout<<"\nHow much Quantity u Want"<<endl;
+		cin>>quantity6;
+	if(quantity6<quan[5])
+{
+	    
+         total6=arr2[5]*quantity6;     
+         totalsum=total6;
+		cout<<"Total Price-> "<<total6;	
+}
+   else{
+   	cout<<endl;
+   	cout<<"OUT OF STOCK";
+   }     
+          
+		
+break;	
+
+}
+
+
+}
+//===========================================DISPLAY RECORD============================
+void displayRecord(){
+	
+	
+	ifstream myfile;
+	myfile.open("supermarketdata.txt",ios::in|ios::binary);
+	cout<<"                               "<<"DISPLAY RECORDS\n";
+	for(int i=0;i<6;i++)
+{
+		myfile>>productname[i];
+		std::cout<<productname[i];    
+		cout<<" ";
+		
+}
+    
+     cout<<"\nThis is the product number, price, quanity  "<<endl ;
+for(int j=0;j<3;j++)
+{   // for row  
+//myfile>>endl;     
+std::cout<<endl;
+    
+for(int k=0;k<6;k++)
+{
+          myfile>>products[j][k]; 			
+		std::cout<<products[j][k];
+		std::cout<<" ";
+		cout<<" ";           		
+}
+           	
+         
+}
+
+myfile.close();
+cout<<"\nProgram is save the file sucessfully";		
+	
+	
+	
+}
+//=============================================MODIFY==============================
+void modify(){
+
+	string product1;
+	int productNo1,price1,quanity1;
+	string product2;
+	int productNo2,price2,quanity2;
+	string product3;
+	int productNo3,price3,quanity3;
+	string product4;
+	int productNo4,price4,quanity4;
+	string product5;
+	int productNo5,price5,quanity5;
+	string product6;
+	int productNo6,price6,quanity6;
+	int a;
+	    cout<<"                        MODIFY"<<endl;
+		cout<<"-------------------------------------------------------"<<endl;	
+cout<<"PRESS TO GO  PRODUCT NO  PRODUCT NAME  QUANITY         PRICE |"<<endl;
+cout<<"    1=>               "<<prod[0]<<"  "<<arr[0]<<"      "<<quan[0]  <<"             "<<                arr2[0]<<" Rups|"<<endl;
+cout<<"    2=>               "<<prod[1]<<"  "<<arr[1]<<"          "<<quan[1]<<"             "<<                arr2[1]<<" Rups|"<<endl;
+cout<<"    3=>               "<<prod[2]<<"  "<<arr[2]<<"        "<<quan[2]<<"             "<<                arr2[2]<<" Rups|"<<endl;
+cout<<"    4=>               "<<prod[3]<<"  "<<arr[3]<<"         "<<quan[3]<<"             "<<                arr2[3]<<" Rups|"<<endl;
+cout<<"    5=>               "<<prod[4]<<"  "<<arr[4]<<"           "<<quan[4]<<"            "<<                arr2[4]<<" Rups|"<<endl;
+cout<<"    6=>               "<<prod[5]<<"  "<<arr[5]<<"          "<<quan[5]<<"            "<<                arr2[5]<<" Rups|"<<endl;
+cout<<"------------------------------------------------------------"<<endl;
+cout<<"Which item you want to change press to go=> ";
+cin>>a;	
+cout<<endl;
+
+switch (a){
+case 1: 
+          cout<<arr[0]<<" "<<arr2[0]<<endl;
+   cout<<"=========================\n";
+    cout<<"Enter the new item here to change\n";
+  cin>>product1;
+  arr[0]=product1;
+    cout<<"Enter the Product no here\n";
+    cin>>productNo1;
+    prod[0]=productNo1;
+    cout<<"Enter the price here\n";
+    cin>>price1;
+    arr2[0]=price1;
+    cout<<"Enter the Quanity here\n";
+    cin>>quanity1;
+    quan[0]=quanity1;
+    
+break;
+case 2:	cout<<arr[1]<<" "<<arr2[1]<<endl;
+ cout<<"================================\n";
+    cout<<"Enter the new item here to change\n";
+    cin>>product2;
+    arr[1]=product2;
+    cout<<"Enter the Product no here\n";
+    cin>>productNo2;
+    prod[1]=productNo2;
+    cout<<"Enter the price here\n";
+    cin>>price2;
+    arr2[1]=price2;
+    cout<<"Enter the Quanity here\n";
+    cin>>quanity2;
+    quan[1]=quanity2;
+break;	
+case 3:cout<<arr[2]<<" "<<arr2[2]<<endl;
+ cout<<"===============================\n";
+    cout<<"Enter the new item here to change\n";
+    cin>>product3;
+    arr[2]=product3;
+    cout<<"Enter the Product no here\n";
+    cin>>productNo3;
+    prod[2]=productNo3;
+    cout<<"Enter the price here\n";
+    cin>>price3;
+    arr2[2]=price3;
+    cout<<"Enter the Quanity here\n";
+    cin>>quanity3;
+    quan[2]=quanity3;
+break;
+case 4: cout<<arr[3]<<" "<<arr2[3]<<endl;
+ cout<<"=================================\n";
+    cout<<"Enter the new item here to change\n";
+    cin>>product4;
+    arr[3]=product4;
+    cout<<"Enter the Product no here\n";
+    cin>>productNo4;
+    prod[3]=productNo4;
+    cout<<"Enter the price here\n";
+    cin>>price4;
+    arr2[3]=price4;
+    cout<<"Enter the Quanity heren\n";
+    cin>>quanity4;
+    quan[3]=quanity4;
+break;
+case 5:cout<<arr[4]<<" "<<arr2[4]<<endl;
+ cout<<"==================================\n";
+    cout<<"Enter the new item here to change\n";
+    cin>>product5;
+    arr[4]=product5;
+    cout<<"mEnter the Product no here\n";
+    cin>>productNo5;
+    prod[4]=productNo5;
+    cout<<"Enter the price here\n";
+    cin>>price5;
+    arr2[4]=price5;
+    cout<<"Enter the Quanity here\n";
+    cin>>quanity5;
+    quan[4]=quanity5;
+break;
+case 6:cout<<arr[5]<<" "<<arr2[5]<<endl;
+ cout<<"================================\n";
+    cout<<"Enter the new item here to change\n";
+    cin>>product6;
+    arr[5]=product6;
+    cout<<"Enter the Product no here\n";
+    cin>>productNo6;
+    prod[5]=productNo6;
+    cout<<"Enter the price here\n";
+    cin>>price6;
+    arr2[5]=price6;
+    cout<<"Enter the Quanity here\n";
+    cin>>quanity6;
+    quan[5]=quanity6;
+break;	
+
+}
+			cout<<"-------------------------------------------------------"<<endl;	
+cout<<"PRESS TO GO  PRODUCT NO  PRODUCT NAME  QUANITY         PRICE |"<<endl;
+cout<<"    1=>               "<<prod[0]<<"  "<<arr[0]<<"      "<<quan[0]  <<"             "<<                arr2[0]<<" Rups|"<<endl;
+cout<<"    2=>               "<<prod[1]<<"  "<<arr[1]<<"          "<<quan[1]<<"             "<<                arr2[1]<<" Rups|"<<endl;
+cout<<"    3=>               "<<prod[2]<<"  "<<arr[2]<<"        "<<quan[2]<<"             "<<                arr2[2]<<" Rups|"<<endl;
+cout<<"    4=>               "<<prod[3]<<"  "<<arr[3]<<"         "<<quan[3]<<"             "<<                arr2[3]<<" Rups|"<<endl;
+cout<<"    5=>               "<<prod[4]<<"  "<<arr[4]<<"           "<<quan[4]<<"            "<<                arr2[4]<<" Rups|"<<endl;
+cout<<"    6=>               "<<prod[5]<<"  "<<arr[5]<<"          "<<quan[5]<<"            "<<                arr2[5]<<" Rups|"<<endl;
+cout<<"------------------------------------------------------------"<<endl;
+
+}
+//===========================DELET=====================================
+void delet(){
+	char delet;
+	        cout<<"                  DELETE                       "<<endl;
+			cout<<"-------------------------------------------------------"<<endl;	
+cout<<"PRESS TO GO  PRODUCT NO  PRODUCT NAME  QUANITY         PRICE |"<<endl;
+cout<<"    1=>               "<<prod[0]<<"  "<<arr[0]<<"      "<<quan[0]  <<"             "<<                arr2[0]<<" Rups|"<<endl;
+cout<<"    2=>               "<<prod[1]<<"  "<<arr[1]<<"          "<<quan[1]<<"             "<<                arr2[1]<<" Rups|"<<endl;
+cout<<"    3=>               "<<prod[2]<<"  "<<arr[2]<<"        "<<quan[2]<<"             "<<                arr2[2]<<" Rups|"<<endl;
+cout<<"    4=>               "<<prod[3]<<"  "<<arr[3]<<"         "<<quan[3]<<"             "<<                arr2[3]<<" Rups|"<<endl;
+cout<<"    5=>               "<<prod[4]<<"  "<<arr[4]<<"           "<<quan[4]<<"            "<<                arr2[4]<<" Rups|"<<endl;
+cout<<"    6=>               "<<prod[5]<<"  "<<arr[5]<<"          "<<quan[5]<<"            "<<                arr2[5]<<" Rups|"<<endl;
+cout<<"------------------------------------------------------------"<<endl;
+cout<<endl<<endl;
+cout<<"                             Which Product you want to DELET\n";
+cout<<"Enter the  Number here ";
+cin>>delet;
+if(delet=='1'){
+	arr[0]="Zero Item";
+	arr2[0]=0;
+	prod[0]=0;
+	quan[0]=0;
+}
+else if(delet=='2'){
+	arr[1]="Zero Item";
+	arr2[1]=0;
+		prod[1]=0;
+	quan[1]=0;
+}
+else if(delet=='3'){
+	arr[2]="Zero Item";
+	arr2[2]=0;
+		prod[2]=0;
+	quan[2]=0;
+}
+else if(delet=='4'){
+	arr[3]="Zero Item";
+	arr2[3]=0;
+		prod[3]=0;
+	quan[3]=0;
+}
+else if(delet=='5'){
+	arr[4]="Zero Item";
+	arr2[4]=0;
+		prod[4]=0;
+	quan[4]=0;
+}
+else if(delet=='6'){
+	arr[5]="Zero Item";
+	arr2[5]=0;
+		prod[5]=0;
+	quan[5]=0;
+}	
+			cout<<"-------------------------------------------------------"<<endl;	
+cout<<"PRESS TO GO  PRODUCT NO  PRODUCT NAME  QUANITY         PRICE |"<<endl;
+cout<<"    1=>               "<<prod[0]<<"  "<<arr[0]<<"      "<<quan[0]  <<"             "<<                arr2[0]<<" Rups|"<<endl;
+cout<<"    2=>               "<<prod[1]<<"  "<<arr[1]<<"          "<<quan[1]<<"             "<<                arr2[1]<<" Rups|"<<endl;
+cout<<"    3=>               "<<prod[2]<<"  "<<arr[2]<<"        "<<quan[2]<<"             "<<                arr2[2]<<" Rups|"<<endl;
+cout<<"    4=>               "<<prod[3]<<"  "<<arr[3]<<"         "<<quan[3]<<"             "<<                arr2[3]<<" Rups|"<<endl;
+cout<<"    5=>               "<<prod[4]<<"  "<<arr[4]<<"           "<<quan[4]<<"            "<<                arr2[4]<<" Rups|"<<endl;
+cout<<"    6=>               "<<prod[5]<<"  "<<arr[5]<<"          "<<quan[5]<<"            "<<                arr2[5]<<" Rups|"<<endl;
+cout<<"------------------------------------------------------------"<<endl;
+	
+}
+/*
+//=========================FILE HANDLING=================================
+
+                     //  this is write the data into filehandling <ofstream>
+void supermarketData(){
+	string productname[6];	// this array for only name of product.
+	int products[3][6];   // This array for product no, price, or quanity.
+	ofstream myfile;
+	myfile.open("supermarketdata.txt",ios::app|ios::binary);
+	cout<<"Enter the  productname here\n";
+for(int i=0;i<6;i++)
+{
+		cin>>productname[i];
+	    cout<<endl;
+	    myfile<<productname[i]<<" ";
+}
+    
+	                      cout<<"Enter the product number, price, quanity here "<<endl ;
+for(int j=0;j<3;j++)
+{   // for row       
+           cout<<endl;
+           myfile<<endl;
+for(int k=0;k<6;k++)
+{ // for colum
+           			
+		cin>>products[j][k];
+		cout<<" ";
+		myfile<<products[j][k]<<" ";
+		
+           		
+}
+           	
+}         
+ 
+
+myfile.close();
+cout<<"Program is save the file sucessfully";
+
+}
+	
+*/
+/*
+      // THis is read the data into filehandling <ifstream>
+int supermarketData(){
+	string productname[6];	
+	int products[3][6]; 
+	ifstream myfile;
+	myfile.open("supermarketdata.txt",ios::in|ios::binary);
+	cout<<"This is the Read the file\n";
+	for(int i=0;i<6;i++)
+{
+		myfile>>productname[i];
+		std::cout<<productname[i];
+	    std::cout<<endl;	    
+		cout<<" ";
+}
+    
+     cout<<"This is the product number, price, quanity  "<<endl ;
+for(int j=0;j<3;j++)
+{   // for row  
+//myfile>>endl;     
+std::cout<<endl;
+    
+for(int k=0;k<6;k++)
+{
+          myfile>>products[j][k]; 			
+		std::cout<<products[j][k];
+		std::cout<<" ";
+		cout<<" ";           		
+}
+           	
+}         
+ 
+
+myfile.close();
+cout<<"\nProgram is save the file sucessfully";	
+	}         
+//============================================filehandling=======================
+*/
+//==============================MAIN BODY====================================
+int main(){
+	char key;
+	jump:
+	jump2:
+	jump3:	
+//supermarketData();
+char option;
+cout<<"                     "<<endl;
+cout<<"                     "<<endl;
+cout<<"                     "<<endl;
+cout<<"                     "<<endl;
+cout<<"                      1.         Perchasing"<<endl;
+cout<<"                      2.         View/Detail"<<endl;
+cout<<"                      3.         Modify/Adding Item"<<endl;
+cout<<"                      4.         Delet"<<endl;
+cout<<"                      5.         Exit"<<endl;
+cout<<"                     "<<endl;
+cout<<"                     "<<endl;
+cout<<"                      Enter the Option to GO ";
+cin>>option;
+system("cls");// This is clear the console previse
+cout<<endl<<endl;
+switch(option){
+case '1':{
+
+	
+		cout<<"-------------------------------------------------------"<<endl;	
+cout<<"PRESS TO GO  PRODUCT NO  PRODUCT NAME  QUANITY         PRICE |"<<endl;
+cout<<"    1=>               "<<prod[0]<<"  "<<arr[0]<<"      "<<quan[0]  <<"             "<<                arr2[0]<<" Rups|"<<endl;
+cout<<"    2=>               "<<prod[1]<<"  "<<arr[1]<<"          "<<quan[1]<<"             "<<                arr2[1]<<" Rups|"<<endl;
+cout<<"    3=>               "<<prod[2]<<"  "<<arr[2]<<"        "<<quan[2]<<"             "<<                arr2[2]<<" Rups|"<<endl;
+cout<<"    4=>               "<<prod[3]<<"  "<<arr[3]<<"         "<<quan[3]<<"             "<<                arr2[3]<<" Rups|"<<endl;
+cout<<"    5=>               "<<prod[4]<<"  "<<arr[4]<<"           "<<quan[4]<<"            "<<                arr2[4]<<" Rups|"<<endl;
+cout<<"    6=>               "<<prod[5]<<"  "<<arr[5]<<"          "<<quan[5]<<"            "<<                arr2[5]<<" Rups|"<<endl;
+cout<<"------------------------------------------------------------"<<endl;
+char choice='y';
+do{
+
+userchoice();//1
+cout<<endl;
+cout<<"Do you want any other thing"<<endl;	
+cin>>choice;
+if(choice=='n'){
+	system("cls");
+
+}	
+}while('n'!=choice);
+
+cout<<"                            => BILL <="<<endl;
+cout<<"==============================================="<<endl;
+cout<<"NO"<<" "<<"NAME"<<" "<<"PRICE"<<" "<<"QUANITY"<<" "<<"TOTAL NET"<<endl;
+cout<<"==============================================="<<endl;
+switch(a){
+case 1:{
+	cout<<prod[0]<<" "<<arr[0]<<" "<<arr2[0]<<" "<<quantity1<<" |"<<total1;
+	break;
+}
+case 2:{
+	cout<<prod[1]<<" "<<arr[1]<<" "<<arr2[1]<<" "<<quantity2<<" |"<<total2;
+	break;
+}
+case 3:{
+	cout<<prod[2]<<" "<<arr[2]<<" "<<arr2[2]<<" "<<quantity3<<" |"<<total3;
+	break;
+}
+case 4:{
+	cout<<prod[3]<<" "<<arr[3]<<" "<<arr2[3]<<" "<<quantity4<<" |"<<total4;
+	break;
+}
+case 5:{
+	cout<<prod[4]<<" "<<arr[4]<<" "<<arr2[4]<<" "<<quantity5<<" |"<<total5;
+	break;
+}
+case 6:{
+	cout<<prod[5]<<" "<<arr[5]<<" "<<arr2[5]<<" "<<quantity6<<" |"<<total6;
+	break;
+}
+	
+	
+}
+
+cout<<"\nPress any key and then Press ENTER ";
+cin>>key;
+system("cls");
+	goto jump;
+	
+break;	
+}
+case'2':{
+	displayRecord();//2
+cout<<endl<<endl;	
+cout<<"\nPress any key and then Press ENTER ";
+cin>>key;	
+system("cls");
+goto jump2;	
+
+	break;
+}
+	
+	
+case '3':{
+	
+modify();//3	
+
+cout<<"\nPress any key and then Press ENTER ";
+cin>>key;	
+system("cls");
+goto jump2;	
+
+
+	break;
+}
+	
+
+case '4':{
+delet();
+cout<<"\nPress any key and then Press ENTER ";
+cin>>key;	
+system("cls");
+goto jump3;	
+	
+	break;
+}
+
+case '5':{
+	cout<<"                                EXIT";
+	cout<<endl;
+	cout<<endl;
+	break;
+}
+
+	
+}
+}
