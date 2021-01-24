@@ -32,7 +32,7 @@ int products[3][6]; // this file handling array
 void userchoice(){
 	
  	
-cout<<"Enter Number which u want to buy\n";
+cout<<"Enter Number which u want to buy ";
 cin>>a;	
 switch (a){
 case 1: cout<<arr[0]<<" "<<arr2[0]<<"Rs";
@@ -44,8 +44,12 @@ if(quantity1<quan[0])
 {
 	    
          total1=arr2[0]*quantity1; 
-		 totalsum=total1;    
+		    
 		cout<<"Total Price-> "<<total1;	
+		if(total1>=400)
+		{
+		totalsum=total1-10 ; 	
+		}
 }
    else{
    	cout<<endl;
@@ -85,6 +89,7 @@ if(quantity3<quan[2])
          total3=arr2[2]*quantity3;     
          totalsum=total3;
 		cout<<"Total Price-> "<<total3;	
+		
 }
    else{
    	cout<<endl;
@@ -507,51 +512,47 @@ cout<<"    4=>               "<<prod[3]<<"  "<<arr[3]<<"         "<<quan[3]<<"  
 cout<<"    5=>               "<<prod[4]<<"  "<<arr[4]<<"           "<<quan[4]<<"            "<<                arr2[4]<<" Rups|"<<endl;
 cout<<"    6=>               "<<prod[5]<<"  "<<arr[5]<<"          "<<quan[5]<<"            "<<                arr2[5]<<" Rups|"<<endl;
 cout<<"------------------------------------------------------------"<<endl;
-char choice='y';
-do{
+cout<<"      |IF USER DO SHOPING MORE THAN 400 THAN IT WILL GET 10% DISCOUNT| "<<endl<<endl<<endl;
 
 userchoice();//1
 cout<<endl;
-cout<<"Do you want any other thing"<<endl;	
-cin>>choice;
-if(choice=='n'){
-	system("cls");
-
-}	
-}while('n'!=choice);
-
 cout<<"                            => BILL <="<<endl;
 cout<<"==============================================="<<endl;
-cout<<"NO"<<" "<<"NAME"<<" "<<"PRICE"<<" "<<"QUANITY"<<" "<<"TOTAL NET"<<endl;
+cout<<"NO"<<" "<<"NAME"<<" "<<"PRICE"<<" "<<"QUANITY"<<" "<<"TOTAL NET"<<" "<<"DISCOUNT"<<endl;
 cout<<"==============================================="<<endl;
-switch(a){
-case 1:{
-	cout<<prod[0]<<" "<<arr[0]<<" "<<arr2[0]<<" "<<quantity1<<" |"<<total1;
-	break;
+if(a==1)
+{
+	cout<<prod[0]<<" "<<arr[0]<<" "<<arr2[0]<<" "<<quantity1<<" |"<<total1<<" |"<<totalsum<<"|";
 }
-case 2:{
+	
+if(a==2)
+{
 	cout<<prod[1]<<" "<<arr[1]<<" "<<arr2[1]<<" "<<quantity2<<" |"<<total2;
-	break;
 }
-case 3:{
-	cout<<prod[2]<<" "<<arr[2]<<" "<<arr2[2]<<" "<<quantity3<<" |"<<total3;
-	break;
-}
-case 4:{
+ if(a==3)
+ {
+ 	cout<<prod[2]<<" "<<arr[2]<<" "<<arr2[2]<<" "<<quantity3<<" |"<<total3;
+ }	
+
+if(a==4)
+{
 	cout<<prod[3]<<" "<<arr[3]<<" "<<arr2[3]<<" "<<quantity4<<" |"<<total4;
-	break;
-}
-case 5:{
+	}	
+
+if(a==5)
+{
 	cout<<prod[4]<<" "<<arr[4]<<" "<<arr2[4]<<" "<<quantity5<<" |"<<total5;
-	break;
-}
-case 6:{
-	cout<<prod[5]<<" "<<arr[5]<<" "<<arr2[5]<<" "<<quantity6<<" |"<<total6;
-	break;
-}
+	}	
+
+	if(a==6)
+	{
+	cout<<prod[5]<<" "<<arr[5]<<" "<<arr2[5]<<" "<<quantity6<<" |"<<total6;	
+	}
+
 	
 	
-}
+	
+
 
 cout<<"\nPress any key and then Press ENTER ";
 cin>>key;
